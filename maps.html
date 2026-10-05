@@ -312,6 +312,29 @@
     </p>
 
 </footer>
+<script>
 
+    const searchBox = document.querySelector(".search");
+    const mapCards = document.querySelectorAll(".map-card");
+
+    searchBox.addEventListener("input", function () {
+
+        const searchText = searchBox.value.toLowerCase();
+
+        mapCards.forEach(function (card) {
+
+            const mapName = card.querySelector("h2").textContent.toLowerCase();
+
+            if (mapName.includes(searchText)) {
+                card.style.display = "block";
+            } else {
+                card.style.display = "none";
+            }
+
+        });
+
+    });
+
+</script>
 </body>
 </html>
