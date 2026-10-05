@@ -319,6 +319,29 @@
     </p>
 
 </footer>
+<script>
 
+    const searchBox = document.querySelector(".search");
+    const agentCards = document.querySelectorAll(".agent-card");
+
+    searchBox.addEventListener("input", function () {
+
+        const searchText = searchBox.value.toLowerCase();
+
+        agentCards.forEach(function (card) {
+
+            const agentName = card.querySelector("h2").textContent.toLowerCase();
+
+            if (agentName.includes(searchText)) {
+                card.style.display = "block";
+            } else {
+                card.style.display = "none";
+            }
+
+        });
+
+    });
+
+</script>
 </body>
 </html>
